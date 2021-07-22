@@ -16,13 +16,12 @@ export default function ButtonAppBar() {
 	)
 	const getDimensions = () => (
 		{
-			x: getRandomArbitrary(50, 300),
-			y: getRandomArbitrary(80, 350)
+			x: 420,
+			y: getRandomArbitrary(200, 500)
 		})
 	const getPlaceholderUrl = ({x,y})=> (`https://via.placeholder.com/${x}x${y}.png`)
 
 	return (
-		<Container>
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
@@ -41,9 +40,9 @@ export default function ButtonAppBar() {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-		</Box>
-		<Box sx={{ width: 500, height: 450, overflowY: 'scroll' }}>
-	  <ImageList variant="masonry" cols={3} gap={8}>
+		<Box sx={{ width: '100%', height: '200%', overflowY: 'scroll' }}>
+	  <Container>
+		<ImageList variant="masonry" cols={3} gap={8}>
   		{Array(15).fill('').map((item, idx) => (
     			<ImageListItem key={idx}>
       				<img
@@ -54,8 +53,9 @@ export default function ButtonAppBar() {
     			</ImageListItem>
  		 ))}
 	</ImageList>
-    </Box>
 		</Container>
+    </Box>
+		</Box>
   );
 }
 
