@@ -19,7 +19,7 @@ export default function ButtonAppBar() {
 			x: 420,
 			y: getRandomArbitrary(200, 500)
 		})
-	const getPlaceholderUrl = ({x,y})=> (`https://via.placeholder.com/${x}x${y}.png`)
+	const getPlaceholderUrl = ({x,y})=> (`https://picsum.photos/${x}/${y}`)
 
 	return (
     <Box sx={{ flexGrow: 1 }}>
