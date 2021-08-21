@@ -1,14 +1,18 @@
 import * as React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Box from '@material-ui/core/Box';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
+import {
+    AppBar, 
+    Box, 
+    Toolbar, 
+    Typography, 
+    Button, 
+    IconButton,
+    ImageList,
+    ImageListItem,
+    ImageListItemBar,
+    Chip,
+    Container
+    } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import ImageList from '@material-ui/core/ImageList';
-import ImageListItem from '@material-ui/core/ImageListItem';
-import Container from '@material-ui/core/Container';
 
 export default function ButtonAppBar() {
 	const getRandomArbitrary = (min, max) => (
@@ -20,6 +24,10 @@ export default function ButtonAppBar() {
 			y: getRandomArbitrary(200, 500)
 		})
 	const getPlaceholderUrl = ({x,y})=> (`https://picsum.photos/${x}/${y}`)
+    
+    const makePictureArray = () => (null)
+    
+    const tags = ['lorem', 'ipsum', 'dolor', 'spackle']
 
 	return (
     <Box sx={{ flexGrow: 1 }}>
@@ -50,6 +58,11 @@ export default function ButtonAppBar() {
 				alt={`idx`}
         			loading="lazy"
       				/>
+                <ImageListItemBar
+                        title={`Image #${idx}`}
+                        subtitle={<Chip label="something" color="primary" />}
+                        position="below"
+                    />
     			</ImageListItem>
  		 ))}
 	</ImageList>
